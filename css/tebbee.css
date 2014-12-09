@@ -1,0 +1,203 @@
+html, body {
+    height: 100%;
+    position: relative;
+}
+
+body {
+    height: 100%;
+    background: #f5f6f7;
+}
+
+nav.navbar {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 13pt;
+    margin-bottom: 0;
+}
+
+nav.header {
+    background: transparent;
+    border-radius: 0;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    border: none;
+}
+
+nav.header .navbar-nav > li > a,
+nav.header .navbar-nav > li > a:hover,
+nav.header .navbar-nav > li > a:active,
+nav.header .navbar-nav > li > a:focus {
+    color: #ffffff !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+nav.header .navbar-nav > li > a:hover,
+nav.header .navbar-nav > li > a:active,
+nav.header .navbar-nav > li > a:focus {
+    text-decoration: underline !important;
+}
+
+nav .navbar-header a.navbar-brand,
+nav .navbar-header a.navbar-brand:hover,
+nav .navbar-header a.navbar-brand:active,
+nav .navbar-header a.navbar-brand:focus {
+    font-weight: 700;
+    padding: 20px;
+    height: 60px;
+    color: #ffffff;
+    position: relative;
+}
+
+nav.header .container-fluid {
+    width: 65%;
+    margin: 0 auto;
+}
+
+/* Header */
+.codrops-header {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    z-index: 1000;
+    font-size: 1.5em;
+}
+
+.codrops-header h1 {
+    position: absolute;
+    font-weight: 700;
+    font-size: 4.5em;
+    line-height: 1.2;
+    color: #fff;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    width: 100%;
+    top: 40%;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+}
+
+.codrops-header h1 span {
+    display: block;
+    font-size: 35%;
+}
+
+.codrops-header h1 a {
+    color: #eff62b;
+}
+
+.codrops-header h1 a:hover,
+.codrops-header h1 a:focus {
+    color: #fff;
+}
+
+/*
+.codrops-header h1 span::before,
+.codrops-header h1 span::after {
+    content: ' ― ';
+    font-weight: 200;
+}*/
+
+.codrops-header h1 i {
+    display: block;
+    font-size: 15%;
+    max-width: 40%;
+    margin: 0 auto;
+    line-height: 2;
+    font-style: normal;
+    font-weight: 400;
+}
+
+div.menu {
+    display: block;
+    position: absolute;
+    bottom: 150px;
+    width: 100%;
+}
+
+.tebbe-footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    position: relative;
+}
+
+.tebbe-footer div.tebbee-overview {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 85%;
+    padding: 10px 0;
+}
+
+.tebbe-footer .tebbee-overview div {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    float: left;
+    text-align: left;
+}
+
+.tebbe-footer .tebbee-overview div.view2,
+.tebbe-footer .tebbee-overview div.view3,
+.tebbe-footer .tebbee-overview div.view4 {
+    display: inline-block;
+    width: calc(100% / 3 - 40px);
+    margin-right: 20px;
+}
+.tebbe-footer .tebbee-overview div.view4{
+    margin-right: 0;
+}
+
+.tebbe-footer .tebbee-overview div.view1 {
+    display: block;
+    margin: 0 0 10px;
+}
+
+.tebbe-footer .tebbee-overview div h3 {
+    display: block;
+    margin: 0 0 15px;
+    padding: 15px 0 5px;
+    font-size: 12pt;
+    font-weight: 700;
+    border-bottom: 1px solid crimson;
+}
+.tebbe-footer .tebbee-overview div.view1 h3{
+    border-bottom: none;
+    font-size: 15pt;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.tebbe-footer .tebbee-overview div p {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 10pt;
+}
+.tebbe-footer .tebbee-overview div.view2 p,
+.tebbe-footer .tebbee-overview div.view3 p,
+.tebbe-footer .tebbee-overview div.view4 p{
+    color: #5d5d5d;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.margin-auto {
+    margin: inherit auto;
+}
