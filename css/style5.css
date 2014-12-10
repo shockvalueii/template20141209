@@ -41,7 +41,6 @@
 }
 .ca-icon{
     font-family: 'WebSymbolsRegular', cursive;
-    font-size: 15pt;
     line-height: 90px;
     position: relative;
     width: 20%;
@@ -63,8 +62,7 @@
     padding: 10px 0;
 }
 .ca-main{
-    font-size: 1.3em;
-    line-height: 1.2em;
+    line-height: 1em;
     margin: 0;
     padding: 10px 0 5px;
     -webkit-transition: all 200ms linear;
@@ -74,7 +72,6 @@
     transition: all 200ms linear;
 }
 .ca-sub{
-    font-size: 11pt;
     color: #666;
     margin: 0;
     padding: 0;
@@ -88,9 +85,6 @@
 .ca-menu li:hover{
     border-color: #FBAE25;
 }
-.ca-menu li:hover .ca-icon{
-    font-size: 20pt;
-}
 .ca-menu li:hover .ca-main{
     opacity: 1;
     -webkit-animation: moveFromTop 300ms ease-in-out;
@@ -103,6 +97,119 @@
     -moz-animation: moveFromBottom 300ms ease-in-out;
     -ms-animation: moveFromBottom 300ms ease-in-out;
 }
+
+@media all and (min-width: 1200px){
+    .ca-icon{
+        font-size: 15pt;
+    }
+    .ca-main{
+        font-size: 15pt;
+    }
+    .ca-sub{
+        font-size: 11pt;
+    }
+    .ca-menu li:hover .ca-icon{
+        font-size: 20pt;
+    }
+}
+@media all and (min-width: 993px) and (max-width: 1199px){
+    .ca-menu li{
+        height: 70px;
+        border-bottom: 5px solid #1A99D5;
+    }
+    .ca-menu li a{
+        height: 70px;
+    }
+    .ca-icon{
+        display: none;
+    }
+    .ca-content{
+        width: 100%;
+        height: 70px;
+        padding: 3px 10px;
+    }
+    .ca-main{
+        font-size: 12pt;
+    }
+    .ca-sub{
+        font-size: 9pt;
+    }
+    .ca-menu li:hover .ca-icon{
+        font-size: 15pt;
+    }
+}
+@media all and (max-width: 992px){
+    div.menu{
+        bottom: 0;
+        width: 100%;
+    }
+    .ca-menu{
+        width: 100%;
+    }
+    .ca-menu li{
+        width: 25%;
+        height: 70px;
+        margin: 0;
+        border-bottom: 3px solid #1A99D5;
+    }
+    .ca-menu li a{
+        height: 70px;
+    }
+    .ca-icon{
+        display: none;
+    }
+    .ca-content{
+        width: 100%;
+        height: 70px;
+        padding: 3px 10px;
+    }
+    .ca-main{
+        font-size: 11pt;
+    }
+    .ca-sub{
+        font-size: 8pt;
+    }
+    .ca-menu li:hover .ca-icon{
+        font-size: 15pt;
+    }
+}
+@media all and (max-width: 765px){
+    div.menu{
+        bottom: 0;
+        width: 100%;
+    }
+    .ca-menu{
+        width: 100%;
+    }
+    .ca-menu li{
+        width: 25%;
+        height: 50px;
+        margin: 0;
+        border-bottom: 3px solid #1A99D5;
+    }
+    .ca-menu li a{
+        height: 50px;
+    }
+    .ca-icon{
+        display: none;
+    }
+    .ca-content{
+        width: 100%;
+        height: 50px;
+        padding: 3px 10px;
+    }
+    .ca-main{
+        font-size: 11pt;
+        padding: 5px 0;
+    }
+    .ca-sub{
+        display: none;
+    }
+    .ca-menu li:hover .ca-icon{
+        font-size: 15pt;
+    }
+}
+
 @-webkit-keyframes moveFromBottom {
     from {
         opacity: 0;
