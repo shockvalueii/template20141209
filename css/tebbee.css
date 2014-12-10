@@ -129,14 +129,17 @@ div.menu {
     padding: 0;
     display: inline-block;
     position: relative;
+    text-align: center;
 }
 
-.tebbe-footer div.tebbee-overview {
-    display: block;
+.tebbe-footer div.tebbee-overview,
+.tebbe-footer .tebbee-info {
+    display: inline-block;
     position: relative;
     margin: 0 auto;
     width: 85%;
-    padding: 10px 0;
+    padding: 15px 0;
+    text-align: center;
 }
 
 .tebbe-footer .tebbee-overview div {
@@ -151,7 +154,7 @@ div.menu {
 .tebbe-footer .tebbee-overview div.view3,
 .tebbe-footer .tebbee-overview div.view4 {
     display: inline-block;
-    width: calc(100% / 3 - 40px);
+    width: calc(100% / 3 - 15px);
     margin-right: 20px;
 }
 .tebbe-footer .tebbee-overview div.view4{
@@ -169,7 +172,8 @@ div.menu {
     padding: 15px 0 5px;
     font-size: 12pt;
     font-weight: 700;
-    border-bottom: 1px solid crimson;
+    border-bottom: 1px solid #c0c0c0;
+    color: #18668e;
 }
 .tebbe-footer .tebbee-overview div.view1 h3{
     border-bottom: none;
@@ -182,12 +186,87 @@ div.menu {
     display: block;
     margin: 0;
     padding: 0;
-    font-size: 10pt;
+    font-size: 11pt;
 }
 .tebbe-footer .tebbee-overview div.view2 p,
 .tebbe-footer .tebbee-overview div.view3 p,
 .tebbe-footer .tebbee-overview div.view4 p{
     color: #5d5d5d;
+}
+
+.tebbe-footer:last-child{
+    background: #ffffff;
+    color: #353535;
+}
+
+.tebbe-footer .decorator{
+    width: 100%;
+    height: 3px;
+    background: #c0c0c0;
+    text-align: center;
+}
+.tebbe-footer .decorator .wrapper{
+    width: 85%;
+    display: block;
+    margin: 0 auto;
+}
+.tebbe-footer .decorator .decorator-right{
+    width: 39%;
+    float: right;
+}
+.tebbe-footer .decorator .decorator-content{
+    width: 25%;
+    display: inline;
+    height: 3px; /*equal height of .decorator*/
+}
+.tebbe-footer .decorator .wrapper .decorator-right .decorator-content{
+    float: right;
+}
+
+.tebbe-footer .tebbee-info>div{
+    display: inline-block;
+    width: 49%;
+    margin: 0;
+    padding: 0;
+}
+.tebbe-footer .tebbee-info>div.info{
+    float: left;
+    text-align: left;
+}
+.tebbe-footer .tebbee-info>div.link{
+    float: right;
+    text-align: right;
+}
+
+.tebbe-footer .tebbee-info>div.info h3{
+    display: block;
+    margin: 0;
+    padding: 3px 0;
+    font-size: 13pt;
+    line-height: 13pt;
+    font-weight: 700;
+}
+
+.tebbe-footer .tebbee-info>div.info p{
+    color: #4f4f4f;
+}
+
+.tebbe-footer .tebbee-info ul{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.tebbe-footer .tebbee-info ul li{
+    display: inline-block;
+    margin: 3px 7px;
+}
+.tebbe-footer .tebbee-info ul li a{
+    font-size: 11pt;
+    color: #444444;
+}
+
+.tebbe-footer .tebbee-info ul.footer-follow li a{
+    font-size: 15pt;
 }
 
 .no-padding {
@@ -200,4 +279,37 @@ div.menu {
 
 .margin-auto {
     margin: inherit auto;
+}
+
+.web-symbol{
+    font-family: 'WebSymbolsRegular', cursive;
+}
+
+div.facebook{
+    background: #3d5b99!important;
+}
+div.google{
+    background: #e43c39!important;
+}
+div.vimeo{
+    background: #1ea8cc!important;
+}
+div.rss{
+    background: #ff6702!important;
+}
+a.facebook,
+p.facebook{
+    color: #3d5b99!important;
+}
+a.google,
+p.google{
+    color: #e43c39!important;
+}
+a.vimeo,
+p.vimeo{
+    color: #1ea8cc!important;
+}
+a.rss,
+p.rss{
+    color: #ff6702!important;
 }

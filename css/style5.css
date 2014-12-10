@@ -34,7 +34,8 @@
 .ca-menu li a{
     text-align: left;
     width: 100%;
-    display: block;
+    height: 100px;
+    display: inline-block;
     color: #333;
     position: relative;
 }
@@ -42,9 +43,9 @@
     font-family: 'WebSymbolsRegular', cursive;
     font-size: 15pt;
     line-height: 90px;
-    position: absolute;
-    width: 60pt;
-    left: 0;
+    position: relative;
+    width: 20%;
+    float: left;
     text-align: center;
     padding: 0;
     -webkit-transition: all 200ms linear;
@@ -54,18 +55,18 @@
     transition: all 200ms linear;
 }
 .ca-content{
-    position: absolute;
-    left: 60pt;
-    width: calc(100% - 60pt);
-    height: 60px;
+    position: relative;
+    float: right;
+    width: 80%;
+    height: 90px;
     top: 0px;
     padding: 10px 0;
 }
 .ca-main{
-    font-size: 18pt;
-    line-height: 18pt;
+    font-size: 1.3em;
+    line-height: 1.2em;
     margin: 0;
-    padding: 10px 0;
+    padding: 10px 0 5px;
     -webkit-transition: all 200ms linear;
     -moz-transition: all 200ms linear;
     -o-transition: all 200ms linear;
@@ -73,7 +74,7 @@
     transition: all 200ms linear;
 }
 .ca-sub{
-    font-size: 12pt;
+    font-size: 11pt;
     color: #666;
     margin: 0;
     padding: 0;
