@@ -377,4 +377,16 @@ p.rss{
     .codrops-header h1 i{
         display: none;
     }
+
+    .tebbe-footer .tebbee-info>div{
+        display: inline-block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    .tebbe-footer .tebbee-info>div.info,
+    .tebbe-footer .tebbee-info>div.link{
+        text-align: center;
+    }
 }
