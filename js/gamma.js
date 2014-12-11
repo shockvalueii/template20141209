@@ -191,6 +191,7 @@ var Gamma = (function() {
 			// if History API is not supported this value will turn false
 			historyapi : true
 		},
+		additionalWidth = 11,
 		init = function( settings, callback ) {
 
 			Gamma.settings = $.extend( true, {}, defaults, settings );
@@ -396,7 +397,8 @@ var Gamma = (function() {
 					$picEl = $item.children(),
 					sources = _getImgSources( $picEl ),
 					source = _chooseImgSource( sources, $item.outerWidth( true ) ),
-					description = $picEl.data( 'description' );
+					description = $picEl.data( 'description' ),
+					link = $picEl.data( 'link' );
 
 				// data is saved in the <li> element
 				$item.data( {
@@ -407,12 +409,18 @@ var Gamma = (function() {
 				} );
 
 				$( '<div/>' ).addClass( 'gamma-description' ).html( description ).insertAfter( $picEl );
-
-				$( '<img/>' ).attr( {
+				var $aTag = $( '<a></a>' );
+				$aTag.addClass( 'linkItem' ).attr({
+					href : link,
+					target : "_blank"
+				}).insertAfter( $picEl );
+				var $image = $( '<img/>' );
+				$image.attr( {
 					alt : $picEl.data( 'alt' ),
 					title : $picEl.data( 'title' ),
 					src : source.src
-				} ).insertAfter( $picEl );
+				} );
+				$aTag.html($image);
 
 				$picEl.remove();
 
@@ -460,7 +468,7 @@ var Gamma = (function() {
 			}
 
 			// set the widths (%) for each of the <li>
-			Gamma.items.css( 'width', Math.floor( containerW / Gamma.columns ) * 100 / containerW + '%' );
+			Gamma.items.css( 'width', Math.floor( (containerW - Gamma.columns * 20) / Gamma.columns ) * 100 / containerW + '%' );
 
 		},
 		// initialize masonry
@@ -750,8 +758,8 @@ var Gamma = (function() {
 				Gamma.fly = $( '<img/>' ).attr( 'src', $img.attr( 'src' ) ).addClass( 'gamma-img-fly' ).css( {
 					width : $img.width(),
 					height : $img.height(),
-					left : $item.offset().left + ( $item.outerWidth( true ) - $item.width() ) / 2,
-					top : $item.offset().top + ( $item.outerHeight( true ) - $item.height() ) / 2
+					left : $item.offset().left + ( $item.outerWidth( true ) - $item.width() ) / 2 - additionalWidth,
+					top : $item.offset().top + ( $item.outerHeight( true ) - $item.height() ) / 2 - additionalWidth
 				} ).appendTo( $body );
 
 				if( Gamma.supportTransitions ) {
@@ -823,8 +831,8 @@ var Gamma = (function() {
 					var styleCSS = {
 							width : finalSizePosition.width,
 							height : finalSizePosition.height,
-							left : finalSizePosition.left + $window.scrollLeft() + Gamma.svMargins.horizontal / 2,
-							top : finalSizePosition.top + $window.scrollTop() + Gamma.svMargins.vertical / 2
+							left : finalSizePosition.left + $window.scrollLeft() + Gamma.svMargins.horizontal / 2 - additionalWidth,
+							top : finalSizePosition.top + $window.scrollTop() + Gamma.svMargins.vertical / 2 - additionalWidth
 						}, 
 						cond = Gamma.supportTransitions;
 
@@ -886,8 +894,8 @@ var Gamma = (function() {
 				$img.css( {
 					width : position.width,
 					height : position.height,
-					left : position.left + Gamma.svMargins.horizontal / 2,
-					top : position.top + Gamma.svMargins.vertical / 2
+					left : position.left + Gamma.svMargins.horizontal / 2 - additionalWidth,
+					top : position.top + Gamma.svMargins.vertical / 2 - additionalWidth
 				} ).appendTo( Gamma.singleview );
 
 				if( Gamma.supportTransitions ) {
