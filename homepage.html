@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/tebbee.css" type="text/css"/>
     <link rel="stylesheet" href="css/mockup4.css" type="text/css"/>
     <link rel="stylesheet" href="css/style5.css" type="text/css"/>
+    <link rel="stylesheet" href="css/stylegamma.css" type="text/css"/>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis' rel='stylesheet' type='text/css'/>
 </head>
@@ -117,7 +118,34 @@
             </ul>
         </div>
     </div>
-    <div class="tebbe-footer">
+    <div>
+    <div class="gamma-container gamma-loading" id="gamma-container">
+
+    <ul class="gamma-gallery">
+        <li>
+            <div data-alt="img03" data-description="<h3>Sky high</h3><p>this is description</p>" data-max-width="1800" data-max-height="1350">
+                <div data-src="images/xxxlarge/3.jpg" data-min-width="1300"></div>
+                <div data-src="images/xxlarge/3.jpg" data-min-width="1000"></div>
+                <div data-src="images/xlarge/3.jpg" data-min-width="700"></div>
+                <div data-src="images/large/3.jpg" data-min-width="300"></div>
+                <div data-src="images/medium/3.jpg" data-min-width="200"></div>
+                <div data-src="images/small/3.jpg" data-min-width="140"></div>
+                <div data-src="images/xsmall/3.jpg"></div>
+                <noscript>
+                    <img src="images/xsmall/3.jpg" alt="img03"/>
+                </noscript>
+                
+            </div>
+        </li>
+    </ul>
+
+    <div class="gamma-overlay"></div>
+
+    <div id="loadmore" class="loadmore"></div>
+
+    </div>
+    </div>
+<!--    <div class="tebbe-footer">
         <div class="tebbee-overview">
             <div class="view1">
                 <h3>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet</h3>
@@ -137,7 +165,7 @@
 
             </div>
         </div>
-    </div>
+    </div>-->
     <div class="tebbe-footer">
         <div class="decorator">
             <div class="wrapper">
@@ -169,14 +197,20 @@
         </div>
     </div>
 </div>
+<!--version jquery under 1.9 for masonry-->
 <script src="js/jquery.min.js" type="text/javascript"></script>
 <script src="js/modernizr.custom.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <script src="js/classie.js" type="text/javascript"></script>
+<script src="js/jquery.masonry.min.js"></script>
+<script src="js/jquery.history.js"></script>
+<script src="js/js-url.min.js"></script>
+<script src="js/jquerypp.custom.js"></script>
+<script src="js/gamma.js"></script>
 <script src="js/main.js" type="text/javascript"></script>
 
 <script>
-    (function () {
+    $(function() {
         new Slideshow(document.getElementById('slideshow-1'));
         setTimeout(function () {
             new Slideshow(document.getElementById('slideshow-2'));
@@ -214,7 +248,44 @@
         function resize() {
             scaleMockup();
         }
-    })();
+
+        var GammaSettings = {
+            // order is important!
+            viewport : [ {
+                width : 1200,
+                columns : 5
+            }, {
+                width : 992,
+                columns : 4
+            }, {
+                width : 768,
+                columns : 3
+            }, {
+                width : 320,
+                columns : 2
+            }, {
+                width : 0,
+                columns : 2
+            } ]
+        };
+        Gamma.init( GammaSettings );
+        // Example how to add more items (just a dummy):
+        var page = 0,
+                items = ['']
+        function fncallback() {
+            $( '#loadmore' ).show().on( 'click', function() {
+                ++page;
+                var newitems = items[page-1]
+                if( page <= 1 ) {
+                    Gamma.add( $( newitems ) );
+                }
+                if( page === 1 ) {
+                    $( this ).remove();
+                }
+            } );
+        }
+    });
+
 </script>
 </body>
 </html>
