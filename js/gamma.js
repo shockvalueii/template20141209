@@ -380,33 +380,14 @@ var Gamma = (function() {
 		// transform initial html structure into a list of images (well mostly)
 		_layout = function( $items ) {
 
-			if( Gamma.itemsCount > 0 ) {
 
-				_createSingleView();
+            var $items = $items || Gamma.items.hide();
 
-			}
+            // replace each div element with an image element with the right source
+            $items.each( function() {
 
-			_setMasonry();
-
-			var $items = $items || Gamma.items.hide();
-
-			// replace each div element with an image element with the right source
-			$items.each( function() {
-
-				var $item = $( this ),
-					$picEl = $item.children(),
-					sources = _getImgSources( $picEl ),
-					source = _chooseImgSource( sources, $item.outerWidth( true ) ),
-					description = $picEl.data( 'description' ),
-					link = $picEl.data( 'link' );
-
-				// data is saved in the <li> element
-				$item.data( {
-					description : description,
-					source : sources,
-					maxwidth : $picEl.data( 'maxWidth' ),
-					maxheight : $picEl.data( 'maxHeight' )
-				} );
+                var $item = $( this ),
+                    $picEl = $item.children();
 
 //				$( '<div/>' ).addClass( 'gamma-description' ).html( description ).insertAfter( $picEl );
 //				var $aTag = $( '<a></a>' );
@@ -424,24 +405,51 @@ var Gamma = (function() {
 //
 //				$picEl.remove();
 
-                $( '<div/>' ).addClass( 'gamma-description' ).html( description ).insertAfter( $picEl );
+                $( '<img/>' ).insertAfter( $picEl );
 
-                $( '<img/>' ).attr( {
+            } );
+
+			if( Gamma.itemsCount > 0 ) {
+
+				_createSingleView();
+
+			}
+
+			_setMasonry();
+
+// replace each div element with an image element with the right source
+            $items.each( function() {
+
+                var $item = $( this ),
+                    $picEl = $item.children('div'),
+                    sources = _getImgSources( $picEl ),
+                    source = _chooseImgSource( sources, $item.outerWidth( true ) ),
+                    description = $picEl.data( 'description' );
+// data is saved in the <li> element
+                $item.data( {
+                    description : description,
+                    source : sources,
+                    maxwidth : $picEl.data( 'maxWidth' ),
+                    maxheight : $picEl.data( 'maxHeight' )
+                } );
+                $( '<div/>' ).addClass( 'gamma-description' ).html( description ).insertAfter( $item.find('img') );
+                $item.find('img').attr( {
                     alt : $picEl.data( 'alt' ),
                     title : $picEl.data( 'title' ),
                     src : source.src
-                } ).insertAfter( $picEl );
+                } );
 
                 $picEl.remove();
 
-			} );
+            } );
+
 
 		},
 		// gets all possible image sources of an element
 		_getImgSources = function( $el ) {
 
 			var theSources = [];
-			$el.children( 'div' ).each( function( i ) {
+			$el.find( 'div' ).each( function( i ) {
 
 				var $source = $( this );
 				theSources.push( {
@@ -750,7 +758,7 @@ var Gamma = (function() {
 		// triggered when one grid image is clicked
 		_singleview = function() {
 
-			var id = $( this ).index();
+			var id = $( this ).closest('li').index();
 			_saveState( id );
 
 		},
@@ -1258,7 +1266,10 @@ var Gamma = (function() {
 
 				case 'singleview' : 
 
-					Gamma.gallery.on( 'click.gamma', 'li', _singleview );
+					Gamma.items.each(function(){
+                        $(this).find('img').on( 'click.gamma',_singleview );
+                        console.log($(this).find('img'));
+                    });
 					Gamma.svclose.on( 'click.gamma', _closesingleview );
 
 					break;

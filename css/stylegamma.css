@@ -38,7 +38,6 @@
 .gamma-gallery li {
 	display: block;
 	position: relative;
-	cursor: pointer;
 	float: left;
 	padding: 0;
 	margin: 10px;
@@ -52,6 +51,7 @@
 	height: auto;
 	display: block;
 	margin: -1px -1px 0;
+    cursor: pointer;
 }
 
 .gamma-description {
@@ -59,7 +59,7 @@
 	background: rgba(255, 255, 255, 0.8);
 	position: relative;
     text-align: left;
-    padding: 10px 10px 0;
+    padding: 10px 10px;
     font-family: 'Roboto';
     font-weight: 400;
 }
@@ -81,7 +81,7 @@
 	font-weight: 400;
 	text-transform: uppercase;
 	font-size: 16px;
-	letter-spacing: 2px;
+    font-family: 'Roboto';
 }
 
 .gamma-description p{
@@ -90,11 +90,13 @@
     line-height: 15pt;
     margin: 0;
     overflow: hidden;
-    padding: 7px 0;
+    padding: 7px 0 0;
     text-align: left;
     color: #555;
 }
-
+.gamma-description-wrapper .gamma-description p{
+    color: #c2c2c2;
+}
 .gamma-buttons {
 	position: absolute;
 	top: 10px;
@@ -236,11 +238,13 @@ button.gamma-btn-sspause:before {
 }
 
 .gamma-nav span.gamma-prev:before {
-	content: '\e75d';
+    font-family: 'websymbolsregular';
+	content: '<';
 }
 
 .gamma-nav span.gamma-next:before {
-	content: '\e75e';
+    font-family: 'websymbolsregular';
+    content: '>';
 }
 
 .gamma-img-fly {
@@ -262,8 +266,8 @@ button.gamma-btn-sspause:before {
 
 
 /* Make some things unselectable. Remove where selection is needed: */
-
-.gamma-container img,
+/*NOPE*/
+/*.gamma-container img,
 .gamma-nav span,
 .gamma-buttons button,
 .gamma-description-wrapper,
@@ -275,11 +279,11 @@ button.gamma-btn-sspause:before {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-}
+}*/
 
 @media screen and (max-width: 750px) {
 	.gamma-description h3 {
-		font-size: 12px;
+		font-size: 15px;
 		padding: 0 5px;
 	}
 
@@ -291,5 +295,14 @@ button.gamma-btn-sspause:before {
 		float: left;
 		clear: both;
 	}
+    .gamma-description p{
+        line-height: 1.1em;
+        font-size: 12px;
+        padding: 5px 0 0;
+    }
+    .gamma-description h3 {
+        font-size: 12px;
+        padding: 0 5px;
+    }
 
 }
