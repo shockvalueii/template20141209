@@ -189,9 +189,9 @@ var Gamma = (function() {
 			// slideshow interval (ms)
 			interval : 4000,
 			// if History API is not supported this value will turn false
-			historyapi : true
+			historyapi : false
 		},
-		additionalWidth = 11,
+		additionalWidth = 0,
 		init = function( settings, callback ) {
 
 			Gamma.settings = $.extend( true, {}, defaults, settings );
@@ -408,21 +408,31 @@ var Gamma = (function() {
 					maxheight : $picEl.data( 'maxHeight' )
 				} );
 
-				$( '<div/>' ).addClass( 'gamma-description' ).html( description ).insertAfter( $picEl );
-				var $aTag = $( '<a></a>' );
-				$aTag.addClass( 'linkItem' ).attr({
-					href : link,
-					target : "_blank"
-				}).insertAfter( $picEl );
-				var $image = $( '<img/>' );
-				$image.attr( {
-					alt : $picEl.data( 'alt' ),
-					title : $picEl.data( 'title' ),
-					src : source.src
-				} );
-				$aTag.html($image);
+//				$( '<div/>' ).addClass( 'gamma-description' ).html( description ).insertAfter( $picEl );
+//				var $aTag = $( '<a></a>' );
+//				$aTag.addClass( 'linkItem' ).attr({
+//					href : link,
+//					target : "_blank"
+//				}).insertAfter( $picEl );
+//				var $image = $( '<img/>' );
+//				$image.attr( {
+//					alt : $picEl.data( 'alt' ),
+//					title : $picEl.data( 'title' ),
+//					src : source.src
+//				} );
+//				$aTag.html($image);
+//
+//				$picEl.remove();
 
-				$picEl.remove();
+                $( '<div/>' ).addClass( 'gamma-description' ).html( description ).insertAfter( $picEl );
+
+                $( '<img/>' ).attr( {
+                    alt : $picEl.data( 'alt' ),
+                    title : $picEl.data( 'title' ),
+                    src : source.src
+                } ).insertAfter( $picEl );
+
+                $picEl.remove();
 
 			} );
 
