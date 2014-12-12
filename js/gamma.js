@@ -191,7 +191,7 @@ var Gamma = (function() {
 			// if History API is not supported this value will turn false
 			historyapi : false
 		},
-		additionalWidth = 0,
+		additionalWidth = 11,
 		init = function( settings, callback ) {
 
 			Gamma.settings = $.extend( true, {}, defaults, settings );
@@ -1078,8 +1078,8 @@ var Gamma = (function() {
 				var styleCSS = {
 					width : $img.width(),
 					height : $img.height(),
-					left : $item.offset().left + ( $item.outerWidth( true ) - $item.width() ) / 2,
-					top : $item.offset().top + ( $item.outerHeight( true ) - $item.height() ) / 2
+					left : $item.offset().left + ( $item.outerWidth( true ) - $item.width() ) / 2 - additionalWidth,
+					top : $item.offset().top + ( $item.outerHeight( true ) - $item.height() ) / 2 - additionalWidth
 				}
 				_applyAnimation( Gamma.svImage, styleCSS, Gamma.settings.speed, Gamma.supportTransitions, function() {
 						
