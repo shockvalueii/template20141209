@@ -16,22 +16,34 @@ nav.navbar {
 }
 
 nav.header {
-    background: transparent;
     border-radius: 0;
-    position: absolute;
     top: 0;
     z-index: 1000;
     width: 100%;
     border: none;
 }
 
+nav.header{
+    background: #ffffff;
+}
+.homepage nav.header{
+    background: transparent;
+    position: absolute;
+}
+
 nav.header .navbar-nav > li > a,
 nav.header .navbar-nav > li > a:hover,
 nav.header .navbar-nav > li > a:active,
 nav.header .navbar-nav > li > a:focus {
-    color: #ffffff !important;
+    color: #444 !important;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+.homepage nav.header .navbar-nav > li > a,
+.homepage nav.header .navbar-nav > li > a:hover,
+.homepage nav.header .navbar-nav > li > a:active,
+.homepage nav.header .navbar-nav > li > a:focus {
+    color: #ffffff !important;
 }
 
 nav.header .navbar-nav > li > a:hover,
@@ -47,8 +59,14 @@ nav .navbar-header a.navbar-brand:focus {
     font-weight: 700;
     padding: 20px;
     height: 60px;
-    color: #ffffff;
+    color: #444;
     position: relative;
+}
+.homepage nav .navbar-header a.navbar-brand,
+.homepage nav .navbar-header a.navbar-brand:hover,
+.homepage nav .navbar-header a.navbar-brand:active,
+.homepage nav .navbar-header a.navbar-brand:focus {
+    color: #ffffff;
 }
 
 nav.header .container-fluid {
@@ -390,3 +408,190 @@ p.rss{
         text-align: center;
     }
 }
+
+/* view post detail */
+small{
+    color: #9197A3;
+    padding-top: 2px;
+}
+.tebbe-content{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.tebbe-content .wrapper{
+    width: 90%;
+    display: inline-block;
+    position: relative;
+    text-align: left;
+}
+
+.tebbe-content .content-container,
+.tebbe-content .ads{
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    padding: 0
+}
+.tebbe-content .content-container{
+    width: 75%;
+    float: left;
+    text-align: center;
+}
+
+.tebbe-content .content-container .single-post{
+    display: inline-block;
+    position: relative;
+    margin: 10px 0;
+    padding: 10px ;
+    width: 80%;
+    height: auto;
+    background: #ffffff;
+}
+.tebbe-content .content-container .single-post .content{
+    display: block;
+}
+.tebbe-content .content-container .single-post .content .single-photo{
+    margin: 0;
+}
+.tebbe-content .content-container .single-post .content .single-photo img{
+    max-width: 100%;
+    height: auto;
+}
+.tebbe-content .content-container .single-post .content .info{
+    display: inline-block;
+    width: 100%;
+    margin: 10px 0 0;
+}
+.tebbe-content .content-container .single-post .comment .avatar,
+.tebbe-content .content-container .single-post .content .info .avatar{
+    display: inline-block;
+    width: 10%;
+    float: left;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.tebbe-content .content-container .single-post .comment .avatar img,
+.tebbe-content .content-container .single-post .content .info .avatar img{
+    max-width: 100%;
+}
+.tebbe-content .content-container .single-post .comment .single-comment .content,
+.tebbe-content .content-container .single-post .content .info .info-detail,
+.tebbe-content .content-container .single-post .comment{
+    display: inline-block;
+    width: 90%;
+    height: auto;
+    margin: 0;
+    padding: 0 0 0 10px;
+    float: right;
+    text-align: left;
+}
+.tebbe-content .content-container .single-post .content h3.title,
+.tebbe-content .content-container .single-post .content a.category,
+.tebbe-content .content-container .single-post .content .info .info-detail small{
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+.tebbe-content .content-container .single-post .content h3.title{
+    font-size: 15pt;
+    line-height: 17pt;
+    margin: 10px 0 5px;
+}
+.tebbe-content .content-container .single-post .content .description{
+    text-align: left;
+    display: block;
+}
+.tebbe-content .content-container .single-post .content .description p,
+.tebbe-content .content-container .single-post .comment p{
+    font-size: 11pt;
+    font-family: inherit;
+    line-height: 13pt;
+    margin: 0;
+    padding: 0;
+}
+.tebbe-content .content-container .single-post .content .description p a,
+.tebbe-content .content-container .single-post .comment p a{
+    display: inline;
+    font-weight: 700;
+}
+.tebbe-content .content-container .single-post .comment .single-comment{
+    display: inline-block;
+    width: 100%;
+    margin: 5px 0;
+}
+.tebbe-content .content-container .single-post .comment .single-comment textarea{
+    width: 100%;
+    font-size: 11pt;
+    line-height: 13pt!important;
+    resize:none;
+    border: 1px solid #DCDEE3;
+    padding: 6px 10px;
+}
+.tebbe-content .content-container .single-post .content .info .control{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10px;
+    height: 50px;
+    background-color: red;
+}.tebbe-content .content-container .single-post .comment .single-comment button{
+    padding: 5px 15px;
+    margin: 5px 0;
+    background-color: #4E69A2;
+    border-color: #435A8B #3C5488 #334C83;
+    border: 0;
+    color: #ffffff;
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2);
+    float: right;
+}
+.tebbe-content .ads{
+    width: 25%;
+    float: right;
+}
+.tebbe-content .ads *{
+    max-width: 100%;
+}
+.tebbe-content .ads>*{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+@media all and (max-width: 992px){
+    .tebbe-content .ads{
+        width: 100%;
+        text-align: center;
+    }
+    .tebbe-content .ads *{
+        max-width: 100%;
+    }
+    .tebbe-content .ads>*{
+        display: inline-block;
+        position: relative;
+        width: 50%;
+        margin-top: 10px;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    .tebbe-content .content-container{
+        width: 100%;
+    }
+    .tebbe-content .content-container .single-post{
+        width: 100%;
+    }
+}
+@media all and (max-width: 768px){
+    .tebbe-content .content-container .single-post .comment{
+        width: 100%;
+        padding: 0;
+    }
+}
+/* end view post detail */
