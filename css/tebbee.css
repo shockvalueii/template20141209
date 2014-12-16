@@ -428,6 +428,7 @@ small{
     display: inline-block;
     position: relative;
     text-align: left;
+	max-width: 1200px;
 }
 
 .tebbe-content .content-container,
