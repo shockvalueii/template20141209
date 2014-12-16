@@ -5,7 +5,9 @@ html, body {
 
 body {
     height: 100%;
-    background: #f5f6f7;
+    background: #E9E9E9;
+    font-family: 'Roboto';
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.01);
 }
 
 nav.navbar {
@@ -38,6 +40,7 @@ nav.header .navbar-nav > li > a:focus {
     color: #444 !important;
     padding-top: 20px;
     padding-bottom: 20px;
+    font-size: 15px;
 }
 .homepage nav.header .navbar-nav > li > a,
 .homepage nav.header .navbar-nav > li > a:hover,
@@ -56,10 +59,10 @@ nav .navbar-header a.navbar-brand,
 nav .navbar-header a.navbar-brand:hover,
 nav .navbar-header a.navbar-brand:active,
 nav .navbar-header a.navbar-brand:focus {
-    font-weight: 700;
+    font-weight: 500;
     padding: 20px;
     height: 60px;
-    color: #444;
+    color: #D51111;
     position: relative;
 }
 .homepage nav .navbar-header a.navbar-brand,
@@ -70,7 +73,7 @@ nav .navbar-header a.navbar-brand:focus {
 }
 
 nav.header .container-fluid {
-    width: 65%;
+    width: 75%;
     margin: 0 auto;
 }
 
@@ -448,7 +451,7 @@ small{
     display: inline-block;
     position: relative;
     margin: 10px 0;
-    padding: 10px ;
+    padding: 0;
     width: 80%;
     height: auto;
     background: #ffffff;
@@ -456,8 +459,13 @@ small{
 .tebbe-content .content-container .single-post .content{
     display: block;
 }
-.tebbe-content .content-container .single-post .content .single-photo{
+.tebbe-content .content-container .single-post .content .single-photo,
+.tebbe-content .content-container .single-post .content .info,
+.tebbe-content .content-container .single-post .content .comment{
+    padding: 10px;
     margin: 0;
+}
+.tebbe-content .content-container .single-post .content .info{
 }
 .tebbe-content .content-container .single-post .content .single-photo img{
     max-width: 100%;
@@ -466,7 +474,9 @@ small{
 .tebbe-content .content-container .single-post .content .info{
     display: inline-block;
     width: 100%;
-    margin: 10px 0 0;
+    margin: 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #B4B8C0;
 }
 .tebbe-content .content-container .single-post .comment .avatar,
 .tebbe-content .content-container .single-post .content .info .avatar{
@@ -493,7 +503,7 @@ small{
     text-align: left;
 }
 .tebbe-content .content-container .single-post .content h3.title,
-.tebbe-content .content-container .single-post .content a.category,
+.tebbe-content .content-container .single-post .content p.category,
 .tebbe-content .content-container .single-post .content .info .info-detail small{
     display: block;
     margin: 0;
@@ -503,7 +513,12 @@ small{
 .tebbe-content .content-container .single-post .content h3.title{
     font-size: 15pt;
     line-height: 17pt;
-    margin: 10px 0 5px;
+    margin: 0;
+    padding: 0;
+}
+.tebbe-content .content-container .single-post .content p.category{
+    padding: 0;
+    margin: 0 0 10px;
 }
 .tebbe-content .content-container .single-post .content .description{
     text-align: left;
@@ -511,16 +526,16 @@ small{
 }
 .tebbe-content .content-container .single-post .content .description p,
 .tebbe-content .content-container .single-post .comment p{
-    font-size: 11pt;
+    font-size: 14px;
     font-family: inherit;
-    line-height: 13pt;
+    line-height: 15pt;
     margin: 0;
     padding: 0;
+    color: #555;
 }
 .tebbe-content .content-container .single-post .content .description p a,
 .tebbe-content .content-container .single-post .comment p a{
     display: inline;
-    font-weight: 700;
 }
 .tebbe-content .content-container .single-post .comment .single-comment{
     display: inline-block;
@@ -543,15 +558,28 @@ small{
     width: 10px;
     height: 50px;
     background-color: red;
-}.tebbe-content .content-container .single-post .comment .single-comment button{
+}
+.tebbe-content .content-container .single-post .comment .single-comment button{
     padding: 5px 15px;
     margin: 5px 0;
     background-color: #4E69A2;
     border-color: #435A8B #3C5488 #334C83;
     border: 0;
     color: #ffffff;
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2);
     float: right;
+}
+.tebbe-content .content-container .single-post a.view-comment{
+    display: inline-block;
+    padding: 5px 0;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+.tebbe-content .content-container .single-post a.view-comment:hover,
+.tebbe-content .content-container .single-post a.view-comment:active,
+.tebbe-content .content-container .single-post a.view-comment:focus{
+    text-decoration: none;
+    background: #f1f2f3;
 }
 .tebbe-content .ads{
     width: 25%;
@@ -596,3 +624,8 @@ small{
     }
 }
 /* end view post detail */
+
+.webfont{
+    font-family: 'WebSymbolsRegular';
+    font-size: inherit;
+}
