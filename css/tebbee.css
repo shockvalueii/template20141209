@@ -11,7 +11,6 @@ body {
 }
 
 nav.navbar {
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 300;
     font-size: 13pt;
     margin-bottom: 0;
@@ -32,7 +31,14 @@ nav.header{
     background: transparent;
     position: absolute;
 }
-
+.navbar-form.navbar-left{
+    margin: 15px 5px;
+}
+.navbar-form .form-control{
+    width: 360px;
+    font-size: 14px;
+    height: 30px;
+}
 nav.header .navbar-nav > li > a,
 nav.header .navbar-nav > li > a:hover,
 nav.header .navbar-nav > li > a:active,
@@ -52,7 +58,8 @@ nav.header .navbar-nav > li > a:focus {
 nav.header .navbar-nav > li > a:hover,
 nav.header .navbar-nav > li > a:active,
 nav.header .navbar-nav > li > a:focus {
-    text-decoration: underline !important;
+    color: #D51111!important;
+    background: #f1f2f3;
 }
 
 nav .navbar-header a.navbar-brand,
@@ -72,9 +79,27 @@ nav .navbar-header a.navbar-brand:focus {
     color: #ffffff;
 }
 
+nav.header .navbar-nav > li > a.register{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin: 10px 0;
+    background: #44c767;
+    color: #ffffff!important;
+    border-radius: 25px;
+}
+nav.header .navbar-nav > li > a.register:hover{
+    background: #3cab56;
+}
+nav.header .navbar-nav > li > a.login:hover{
+    background: #ffffff;
+}
+
 nav.header .container-fluid {
     width: 75%;
     margin: 0 auto;
+    max-width: 1200px;
 }
 
 /* Header */
@@ -161,6 +186,7 @@ div.menu {
     width: 85%;
     padding: 15px 0;
     text-align: center;
+    max-width: 1200px;
 }
 
 .tebbe-footer .tebbee-overview div {
@@ -230,6 +256,7 @@ div.menu {
     width: 85%;
     display: block;
     margin: 0 auto;
+    max-width: 1200px;
 }
 .tebbe-footer .decorator .decorator-right{
     width: 39%;
@@ -432,6 +459,7 @@ small{
     position: relative;
     text-align: left;
 	max-width: 1200px;
+    margin: 10px 0;
 }
 
 .tebbe-content .content-container,
@@ -450,11 +478,12 @@ small{
 .tebbe-content .content-container .single-post{
     display: inline-block;
     position: relative;
-    margin: 10px 0;
+    margin: 10px auto;
     padding: 0;
     width: 80%;
     height: auto;
     background: #ffffff;
+    box-shadow: 0 0 5px #d2d2d2;
 }
 .tebbe-content .content-container .single-post .content{
     display: block;
@@ -476,7 +505,6 @@ small{
     width: 100%;
     margin: 0;
     padding-bottom: 5px;
-    border-bottom: 1px solid #B4B8C0;
 }
 .tebbe-content .content-container .single-post .comment .avatar,
 .tebbe-content .content-container .single-post .content .info .avatar{
@@ -484,8 +512,11 @@ small{
     width: 10%;
     float: left;
     margin: 0;
-    padding: 0;
+    padding: 5px 0;
     overflow: hidden;
+    min-width: 50px;
+    max-width: 100px;
+    max-height: 200px;
 }
 .tebbe-content .content-container .single-post .comment .avatar img,
 .tebbe-content .content-container .single-post .content .info .avatar img{
@@ -503,8 +534,9 @@ small{
     text-align: left;
 }
 .tebbe-content .content-container .single-post .content h3.title,
-.tebbe-content .content-container .single-post .content p.category,
-.tebbe-content .content-container .single-post .content .info .info-detail small{
+.tebbe-content .content-container .single-post .content small.category,
+.tebbe-content .content-container .single-post .content .info .info-detail small,
+.tebbe-content .content-container .single-post .comment .single-comment small{
     display: block;
     margin: 0;
     padding: 0;
@@ -516,9 +548,9 @@ small{
     margin: 0;
     padding: 0;
 }
-.tebbe-content .content-container .single-post .content p.category{
+.tebbe-content .content-container .single-post .content small.category{
     padding: 0;
-    margin: 0 0 10px;
+    margin: 5px 0 20px;
 }
 .tebbe-content .content-container .single-post .content .description{
     text-align: left;
@@ -536,6 +568,10 @@ small{
 .tebbe-content .content-container .single-post .content .description p a,
 .tebbe-content .content-container .single-post .comment p a{
     display: inline;
+}
+.tebbe-content .content-container .single-post .comment .single-comment small,
+.tebbe-content .content-container .single-post .content .info .info-detail small{
+    margin: 7px 0;
 }
 .tebbe-content .content-container .single-post .comment .single-comment{
     display: inline-block;
@@ -574,12 +610,18 @@ small{
     margin: 0;
     text-align: center;
     width: 100%;
+    border-top: 1px solid #E9E9E9;
+    border-bottom: 1px solid #E9E9E9;
 }
 .tebbe-content .content-container .single-post a.view-comment:hover,
-.tebbe-content .content-container .single-post a.view-comment:active,
+.tebbe-content .content-container .single-post a.view-comment:active{
+    text-decoration: none;
+    background: #f9f9f9;
+    outline: none;
+}
 .tebbe-content .content-container .single-post a.view-comment:focus{
     text-decoration: none;
-    background: #f1f2f3;
+    outline: none;
 }
 .tebbe-content .ads{
     width: 25%;
