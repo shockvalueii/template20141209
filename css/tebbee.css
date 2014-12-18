@@ -13,7 +13,9 @@ body {
     font-family: 'Roboto';
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.01);
 }
-
+.container{
+    width: 100%;
+}
 nav.navbar {
     font-weight: 300;
     font-size: 13pt;
@@ -39,7 +41,7 @@ nav.header{
     margin: 15px 5px;
 }
 .navbar-form .form-control{
-    width: 360px;
+    width: 100%;
     font-size: 14px;
     height: 30px;
 }
@@ -78,20 +80,6 @@ nav .navbar-header a.navbar-brand:focus {
 .homepage nav .navbar-header a.navbar-brand:active,
 .homepage nav .navbar-header a.navbar-brand:focus {
     color: #ffffff;
-}
-
-nav.header .navbar-nav > li > a.register{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 25px;
-    padding-right: 25px;
-    margin: 10px 0;
-    background: #44c767;
-    color: #ffffff!important;
-    border-radius: 25px;
-}
-nav.header .navbar-nav > li > a.register:hover{
-    background: #3cab56;
 }
 nav.header .navbar-nav > li > a.login:hover{
     background: #ffffff;
@@ -363,8 +351,23 @@ p.rss{
     color: #ff6702!important;
 }
 
+@media  all and (min-width: 768px){
+    nav.header .navbar-nav > li > a.register{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 25px;
+        padding-right: 25px;
+        margin: 10px 0;
+        background: #44c767;
+        color: #ffffff!important;
+        border-radius: 25px;
+    }
+    nav.header .navbar-nav > li > a.register:hover{
+        background: #3cab56;
+    }
+}
 
-@media all and (min-width: 768px) and (max-width: 992px){
+@media all and (min-width: 769px) and (max-width: 992px){
     nav.header .container-fluid {
         width: 100%;
     }
@@ -372,7 +375,7 @@ p.rss{
         display: none;
     }
 }
-@media all and (max-width: 765px){
+@media all and (max-width: 768px){
     nav.header .container-fluid {
         width: 100%;
     }
@@ -380,27 +383,7 @@ p.rss{
         margin: 0;
     }
     nav.header {
-        background: transparent;
         border-radius: 0;
-        position: relative;
-    }
-    nav.header .navbar-nav > li > a,
-    nav.header .navbar-nav > li > a:hover,
-    nav.header .navbar-nav > li > a:active,
-    nav.header .navbar-nav > li > a:focus {
-        color: #404040 !important;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        border-left: 5px solid #1c9ad5;
-    }
-    nav .navbar-header a.navbar-brand,
-    nav .navbar-header a.navbar-brand:hover,
-    nav .navbar-header a.navbar-brand:active,
-    nav .navbar-header a.navbar-brand:focus {
-        font-weight: 700;
-        padding: 20px;
-        height: 60px;
-        color: #1A99D5;
         position: relative;
     }
     .navbar-collapse {
@@ -438,6 +421,7 @@ p.rss{
     .tebbe-footer .tebbee-info>div.link{
         text-align: center;
     }
+
 }
 
 /* view post detail */
