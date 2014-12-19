@@ -1,3 +1,21 @@
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Roboto Light'), local('Roboto-Light'), url(roboto/NYDWBdD4gIq26G5XYbHsFD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto Regular'), local('Roboto-Regular'), url(roboto/HV_H5nosKj8mZupFxrHqHA.woff) format('woff');
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Roboto Medium'), local('Roboto-Medium'), url(roboto/mbmhprMH69Zi6eEPBYVFhT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
 a:focus{
     text-decoration: none;
     outline: none;
@@ -490,6 +508,7 @@ small{
 .tebbe-content .content-container .single-post .content .single-photo img{
     max-width: 100%;
     height: auto;
+    cursor: pointer;
 }
 .tebbe-content .content-container .single-post .content .info{
     display: inline-block;
@@ -530,7 +549,7 @@ small{
 .tebbe-content .content-container .single-post .content .info .avatar{
     height: 2em;
     width: 2em;
-    margin: 0;
+    margin: 0 5px 0 0;
     padding: 0;
     overflow: hidden;
     border-radius: 3px;
@@ -676,6 +695,7 @@ small{
         padding: 0;
     }
 }
+
 /* end view post detail */
 
 .webfont{

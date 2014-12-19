@@ -182,6 +182,8 @@ button.gamma-btn-sspause:before {
 	right: 0px;
 	z-index: 10;
 	padding: 5px 0;
+    color: #ffffff;
+    text-align: center;
 }
 
 .gamma-single-view .gamma-description {

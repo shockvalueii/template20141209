@@ -623,7 +623,7 @@ var Gamma = (function() {
 
 			} );
 
-		}
+        },
 		// resize and chooses (if necessary) a new source for the image in the single view
 		_svResizeImage = function( callback ) {
 
