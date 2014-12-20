@@ -49,32 +49,48 @@
     </nav>
 <div class="tebbe-content">
 <div class="wrapper">
-    <div id="content-container" class="content-container">
-        <ul style="padding: 0">
-        <li id="post-1">
-            <div id="single-post-1"
-                 class="single-post"
-                 data-title="Lorem ipsum dolor sit amet, consectetur adipisicing elit"
-                 data-author="Shock Value"
-                 data-avatar = "images/large/demo-photo.png"
-                 data-authorlink = "javascript:void(0)"
-                 data-postlink="javascript:void(0)"
-                 data-categorylink="javascript:void(0)"
-                 data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                 data-timepost="12 December at 09:27"
-                 data-category="Category 1">
-
-                <div data-src="images/large/1.png" data-min-width="1300"></div>
-                <div data-src="images/large/1.png" data-min-width="1000"></div>
-                <div data-src="images/large/1.png" data-min-width="700"></div>
-                <div data-src="images/large/1.png" data-min-width="300"></div>
-                <div data-src="images/large/1.png" data-min-width="200"></div>
-                <div data-src="images/large/1.png" data-min-width="140"></div>
-            </div>
-        </li>
-    </ul>
-        <div class="gamma-overlay"></div>
-        </div>
+    <div class="content-container">
+        <div class="single-post">
+<div class="content">
+<div class="info info-photo">
+<h3 class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+<small class="category">
+<span class="avatar">
+<img src="images/large/demo-photo.png"/>
+</span>&nbsp;&nbsp;<a href="javascript:void(0)">Shock Value</a> post in <a href="javascript:void(0)">Category 1</a>
+</small>
+</div>
+<div class="slider">
+<div id="slidr-img">
+  <img data-slidr="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." src="images/large/1.png">
+  <img data-slidr="Lorem ipsum dolor sit amet." src="images/large/2.png">
+  <img data-slidr="Lorem ipsum dolor sit amet, consectetur adipisicing elit." src="images/large/demo-photo.png">
+</div>
+</div>
+<div class="info">
+<div class="info-detail">
+<div class="description">
+<p id="description"></p>
+<small><i class="fa fa-clock-o"></i>&nbsp;12 December at 09:27</small>
+</div>
+</div>
+</div>
+<div class="info">
+<div class="info-detail">
+<div class="description">
+    <img src="images/large/demo-photo.png"/>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div></div></div>
+<div class="comment">
+</div>
+</div>
+</div>
+    </div>
     <div class="ads">
         <img src="images/large/the-red-bull-rabi-khan.jpg"/>
         <img src="images/large/the-red-bull-rabi-khan.jpg"/>
@@ -123,84 +139,27 @@
 <script src="js/jquerypp.custom.js"></script>
 <script src="js/gamma.js"></script>
 <script src="js/flypost.js"></script>
+<script src="js/slidr.js"></script>
 <script src="js/jquery.autosize.min.js"></script>
 <script src="js/main.js" type="text/javascript"></script>
 
 <script>
 
-    function resetPosts() {
-        $(".view-comment").each(function () {
-            var $_a = $(this);
-            var $_comment = $(this).next(".comment");
-            $_comment.hide();
-            $_a.off();
-            $_a.on("click", function () {
-                $_comment.toggle("fast", function () {
-                    if ($_comment.is(':visible')) {
-                        $_a.html('Hide comments');
-                    } else {
-                        $_a.html('Show comments');
-                    }
-                });
-            });
-        });
-        $('textarea').each(function () {
-            var elem = $(this).closest('form').find(".chars");
-            $(this).limiter(100, elem);
-            console.log(elem);
-            console.log($(this));
-        });
-        $('textarea').autosize();
-    }
-    
     $(function() {
-        $.fn.extend( {
-            limiter: function(limit, elem) {
-                $(this).on("keyup focus", function() {
-                    setCount(this, elem);
-                });
-                function setCount(src, elem) {
-                    var chars = src.value.length;
-                    if (chars > limit) {
-                        src.value = src.value.substr(0, limit);
-                        chars = limit;
-                    }
-                    elem.html( limit - chars );
-                }
-                setCount($(this)[0], elem);
-            }
-        });
-        //resetPosts();
-        var lastScrollTop = $(window).scrollTop();
-        var loaded = false;
-        var post = 0;
-        $( window  ).scroll(function() {
-            var position = $(window).scrollTop();
-            if (!loaded && post < 5 && position > lastScrollTop && position + $(window).height() == $(document).height()) {
-                loaded = true;
-                $.ajax( {
-                    type: 'GET',
-                    async: false,
-                    contentType: 'application/json',
-                    dataType: "json",
-                    url:'post.json',
-                    success:function(data) {
-                        var comments = '';
-                        FlyPost.add(data);
-                        post ++;
-                    },
-                    error: function(e)
-                    {
-                        alert(e.message);
-                    }
-                });
-            }else{
-                console.log("dkm dkm dkm dkm dkm");
-            }
-            lastScrollTop = position;
-            loaded = false;
-        });
-        FlyPost.init();
+        var $desc = $('#description');
+        $desc.html($('#slidr-img').children('img:first-child').data('slidr'));
+        console.log($('#slidr-img').children('img:first-child'));
+        slidr.create('slidr-img',{
+          after: function(e) { console.log('in: ' + e.in.slidr); $desc.html(e.in.slidr).fadeIn(500); },
+          before: function(e) { console.log('out: ' + e.out.slidr); $desc.hide()},
+          breadcrumbs: true,
+          fade: false,
+          keyboard: true,
+          pause: true,
+          theme: '#FFF',
+          touch: true,
+          transition: 'fade'
+        }).start();
     });
 
 </script>

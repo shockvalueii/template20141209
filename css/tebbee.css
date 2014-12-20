@@ -499,11 +499,16 @@ small{
 }
 .tebbe-content .content-container .single-post .content .info{
     padding: 10px;
-}
+},
 .tebbe-content .content-container .single-post .content .single-photo{
     margin: 0 -10px;
     display: inline-block;
     width: calc(100% + 20px);
+}
+.tebbe-content .content-container .single-post .content .slider{
+}
+.tebbe-content .content-container .single-post .content .slider>div>img{
+    width: 100%!important;
 }
 .tebbe-content .content-container .single-post .content .single-photo img{
     max-width: 100%;
@@ -562,6 +567,10 @@ small{
     border-radius: 3px;
 }
 
+.tebbe-content .content-container .single-post .content .description *{
+    max-width: 100%;
+    margin: 5px 0;
+}
 .tebbe-content .content-container .single-post .content .description{
     text-align: left;
     display: block;
