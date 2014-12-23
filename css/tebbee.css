@@ -28,7 +28,7 @@ html, body {
 body {
     height: 100%;
     background: #E9E9E9;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.01);
 }
 .container{
@@ -66,11 +66,24 @@ nav.header{
 nav.header .navbar-nav > li > a,
 nav.header .navbar-nav > li > a:hover,
 nav.header .navbar-nav > li > a:active{
-    color: #444 !important;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    color: #444444 !important;
     font-size: 15px;
+    line-height: 30px;
+    padding-bottom: 15px;
+    padding-top: 15px;
 }
+.dropdown-menu > li > a {
+    clear: both;
+    color: #333333;
+    display: block;
+    font-weight: normal;
+    line-height: 1.42857;
+    padding: 7px 20px;
+    white-space: nowrap;
+    font-family: inherit;
+    font-weight: 400;
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.01);
+ }
 .homepage nav.header .navbar-nav > li > a,
 .homepage nav.header .navbar-nav > li > a:hover,
 .homepage nav.header .navbar-nav > li > a:active{
@@ -107,6 +120,19 @@ nav.header .container-fluid {
     width: 75%;
     margin: 0 auto;
     max-width: 1200px;
+}
+
+nav.header .navbar-nav li.user{
+    height: 60px;
+}
+nav.header .navbar-nav li.user img{
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    float: left;
+    margin-right: 10px;
+}
+nav.header .navbar-nav li.user a{
 }
 
 /* Header */
@@ -371,8 +397,8 @@ p.rss{
 
 @media  all and (min-width: 768px){
     nav.header .navbar-nav > li > a.register{
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
         padding-left: 25px;
         padding-right: 25px;
         margin: 10px 0;
@@ -712,4 +738,8 @@ small{
 .webfont{
     font-family: 'WebSymbolsRegular';
     font-size: inherit;
+}
+.navbar-toggle {
+    margin-bottom: 13px;
+    margin-top: 13px;
 }
