@@ -134,6 +134,18 @@ nav.header .navbar-nav li.user img{
 }
 nav.header .navbar-nav li.user a{
 }
+nav.header .navbar-nav li.user .notification{
+    display: inline-block;
+    height: 20px;
+    border-radius: 3px 3px 3px 3px;
+    background: none repeat scroll 0% 0% #ff4767;
+    font-size: 12px;
+    padding: 0 3px;
+    margin-left: 3px;
+    line-height: 20px;
+    z-index: 1;
+    color: #ffffff;
+}
 
 /* Header */
 .codrops-header {
