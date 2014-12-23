@@ -499,11 +499,13 @@ small{
 }
 .tebbe-content .content-container .single-post .content .info{
     padding: 10px;
-},
+}
 .tebbe-content .content-container .single-post .content .single-photo{
     margin: 0 -10px;
     display: inline-block;
     width: calc(100% + 20px);
+}
+.tebbe-content .content-container .single-post .content .slider{
 }
 .tebbe-content .content-container .single-post .content .slider{
 }

@@ -51,6 +51,9 @@
 <div class="wrapper">
     <div class="content-container">
         <div class="single-post">
+
+        </div>
+        <div class="single-post">
 <div class="content">
 <div class="info info-photo">
 <h3 class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
@@ -61,11 +64,53 @@
 </small>
 </div>
 <div class="slider">
-<div id="slidr-img">
-  <img data-slidr="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." src="images/large/1.png">
-  <img data-slidr="Lorem ipsum dolor sit amet." src="images/large/2.png">
-  <img data-slidr="Lorem ipsum dolor sit amet, consectetur adipisicing elit." src="images/large/demo-photo.png">
-</div>
+    <div id="galleria"style="height:500px">
+        <a href="img/galleria/1000px-7.jpg">
+            <img title="Locomotives Roundhouse"
+                 alt="Steam locomotives of the Chicago &amp; North Western Railway."
+                 src="img/galleria/100px-7.jpg">
+        </a>
+        <a href="img/galleria/1000px-10.jpg">
+            <img title="Icebergs in the High Arctic"
+                 alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostr"
+                 src="img/galleria/100px-10.jpg">
+        </a>
+        <a href="img/galleria/1000px-1.jpg">
+            <img title="Araña"
+                 alt="Xysticus cristatus, A Estrada, Galicia, Spain"
+                 src="img/galleria/100px-1.jpg">
+        </a>
+        <a href="img/galleria/1000px-2.jpg">
+            <img title="Museo storia naturale"
+                 src="img/galleria/100px-2.jpg">
+        </a>
+        <a href="img/galleria/1000px-3.jpg">
+            <img title="Grjótagjá caves in summer 2009"
+                 src="img/galleria/100px-3.jpg">
+        </a>
+        <a href="img/galleria/1024px-4.jpg">
+            <img title="Thermes"
+                 alt="Xanthi hot-spa springs, Xanthi Prefecture, Greece"
+                 src="img/galleria/100px-4.jpg">
+        </a>
+        <a href="img/galleria/1024px-5.jpg">
+            <img title="Polish Army Kołobrzeg"
+                 alt="A display of the Polish Army. Both the soldier, and the vehicle belong to the 7th Pomeranian Coastal Defence Brigade, a part of the Szczecin-based 12th Mechanized Division ”Bolesław Krzywousty”"
+                 src="img/galleria/100px-5.jpg">
+        </a>
+        <a href="img/galleria/1000px-6.jpg">
+            <img title="Zlatograd Bulgaria"
+                 src="img/galleria/100px-6.jpg">
+        </a>
+        <a href="img/galleria/1000px-7.jpg">
+            <img title="09-28-2001 in New York City"
+                 alt="New York, NY, September 28, 2001 -- Debris on surrounding roofs at the site of the World Trade Center. Photo by Andrea Booher/ FEMA News Photo"
+                 src="img/galleria/100px-7.jpg">
+        </a>
+        <a href="img/galleria/1024px-8.jpg">
+            <img src="img/galleria/100px-8.jpg">
+        </a>
+    </div>
 </div>
 <div class="info">
 <div class="info-detail">
@@ -141,6 +186,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 <script src="js/flypost.js"></script>
 <script src="js/slidr.js"></script>
 <script src="js/jquery.autosize.min.js"></script>
+<script src="js/galleria-1.2.5.js"></script>
 <script src="js/main.js" type="text/javascript"></script>
 
 <script>
@@ -161,6 +207,12 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           transition: 'fade'
         }).start();
     });
+
+    // Load the twelve theme
+    Galleria.loadTheme('js/themes/twelve/galleria.twelve.js');
+
+    // Initialize Galleria
+    $('#galleria').galleria();
 
 </script>
 </body>
